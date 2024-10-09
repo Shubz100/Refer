@@ -1,0 +1,17 @@
+name: Install MongoDB
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  install-mongodb:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install MongoDB
+        run: npm install mongodb
+      - name: Verify MongoDB installation
+        run: npm ls mongodb
